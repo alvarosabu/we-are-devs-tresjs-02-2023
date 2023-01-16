@@ -4,7 +4,7 @@ theme: penguin
 colorSchema: light
 themeConfig:
   logoHeader: https://res.cloudinary.com/alvarosaburido/image/upload/v1666359605/as-portfolio/Pixel_Avatar_lhbjva.png
-  eventLogo: 'https://www.wearedevelopers.com/logo.png'
+  eventLogo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAACMCAMAAABmmcPHAAAAk1BMVEX/////Fkz/AD//AEH/ADv/AET/Dkn/tcP/2d7/AEX/+fv/AED/PWf/AD3/o7X/CEf/ADf/0Nn/9Pf/8fT/nrD/3+X/wMz/xtH/scD/6+//5ev/zNb/iJ7/b4n/Z4P/kKX/rLv/WHj/L13/gJj/TnD/epL/J1f/Qmf/c47/l6r/Wnn/K1n/G1L/Sm7/bIf/h53/ADFc8rvPAAAMjUlEQVR4nO1d2ULqMBC1K7RQCiggqIgoqIh6///rbgvKUs4kM2kLPuQ8CoZmmtlOJpOrKwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwuLC6F/20C4jeVDwYEatxP5SHd4pJ50nKbBLOpCf+67AP9uxSP1/qGB3O6b/JmcBI3kz4Vyi+ev7wavuSa8ew5AuhIP9ByggZxwfS0dqZHAkRx/JBsnbkeeMx2Kf78eTCI4qWQgHOd6HWLxJDPpI61SPFIkVI64nT1S6s+/pXOpB1Moae9ROMwtsQyd9Ek40gSrRo6xaKCNoDOdCtyXjuw/awFW1HDelw1DLUO5cmBjlsPtiAb6EXT+st31w92lPWN/CXXeH4pGGdDLMPgWjbQXzwnSF5GwDkcKI//18cKe8R7KKHoQDfJILkOpctz55EiO15SMVHhloRetGpf0jANsXVOJWevPyWWY2Q6Rcjxg77xB8CwZ6VQ30mT5LHpX1eIFmtfWjWCIEeUKc0RTwUhjxUBO+CFZkcgIhUFyOc84w+7wU2AQVcswG0pgHDuuaqSkIZgXYe1TN30YXsQzXmO19/kp70QlnMy0vrNHirF67YQkSaRotxr588dLBNcL6A6DBXuAm5ZS0OErewE1lQs6k7RAPor4JfOM7tOtMIItD+zo+clz/KlchpnG33EfhUjkd5AkUipB5+8scZ7FPFVJ4CdKuMxST7MM+cnzNQ7q9xAoh07QuWf02zdn9YwlmSVseg5ntGZOp6EIordw+cySVtD5k3mt6Rk94xgvSY9nEMe6ZchnluhE/hfRF3tWHEHnIybr+7N5ximcoHfP+meST9ojfWGNNFBGiRuEa3asyBR0bkK6n7PzLOthGWbpSbsMsxCGlZApEvkd+MwSW9D5VN3WG9tjl0CM2WQW1c5Yhkxmqc+RTPrJnpRA0E4eXH+81+8ZCWaJkzzfM5ZhphyMWFGZyO8QcGMyoaBzz9hdSVJPEwy6+Lf1BlHJJ+3BYZa+OLrBT6TEgnby4DqtmXb6hA/FYJZ4y9BJ9coxpnbDjsFmlkwEnSHotjs1sqkzGOExmCW8FQaG0oZQaj5pDy6zFD91dQE+8agtfyrcCOYjxgvT1RnECW8ZcpglNZ+0B38XcnAfJMxBC4h8py7aaQFXpjZ51vBJe2iT5yZ3JIZy7DFcdT0jC5IH1/LqFgbuoDsMl5qI55U9C1cTp2oT+R1kW/TjzrLLNG/FybvJWw2004cJs9TjW0FN8jzGvw8FIK1Z6i0S12hZZyZkXTntdIOZJbVBfOMLWpM8U/VJCC25q2p8dgMzE+IlT7KKAB2ucSgdqQwig0/aw52pfp6TyO+eSbIL+YvJ49o3MyFpy/muMrg2YJZusQPD81EmzwMs5xS+SAGzdITRV9Iy9IzefFbZhswQb7SomCUckUVEVh4plgXmk9IpTjpaspqlPa47bd/UhASVBdchfAKXtlBNvAy7MVYORVkGkcUlwxl8AeGr+Syb345pcO0tq6kDFjNLeOVm/pOgXT9I5RhhG+Rd9QnlKBN2xY1VYhhce9FLozxzLWWWYswn5SogVQ6cyOcqQHzC36KHGL/PTT2jV8GeLtZfj2KWhlitwytKOchYkUjku5lRH+EfWZd2TXeLyDUyIWEQtEtWO91iZokyiHiHb8PxD4hdViJW7EDLEc7zz3AE6VVAHPdnL8ae0SnlGWMsHoJqJ+qT3E1sQSgHkTzjRL41yz8j4hHeLqQOg/uloQnJPGOJPOYNG0TMLOFUMmxvPmwQaxR6kh6eq78xD8QJAEnNkgrx8Msz84yJpAy0AKJmCTNL2BV6s+3zY/MXQGYJ80m/4Q4O1sWHP2iMbz5NTIhnGsznwE6phZglgk9Kf3YnCOEhZomoT/qtlWlgzVlWWCAQ957lwXUpQRPMEjKImE/anRToEdECUA7CzKx/peBg1al2E6Q/W7VkJqSUoMdE+f9p8kycd9tPH1uWrYM7BmEbdlsyuPLRiFlSYvIoCq5LCVoVsh2DyI0/dl/oqHzlIQZ4Hbm7PIkwUmH1VRj90YPDDq7LCXqI1fjjxCDiUt2D5GaMH/g0eSbit4PkhogVS02Uwrjz4vI8Y8nfJwxiMWZsElToQbpOKEeRWYrx1sphRkJoz7zUREnEzecPjmcsKehvnDwXS3gZOTaRoa8LyjGEI4XOwdfGxNuvrY78ujENtZ6xpKCbRIVXgVkiXOHRwuclzzSftAeuYSrLLCkxeH9tqT1jWdPFYpaI1Xoc2xKr/jhWJBL54/LTEeEOa621jXtvtQr6lmMQWfaXqDONjpSDF5wQWWitJYmZ/ahV0Nd42KPkmWg+Udyr0gXIOZSJ/A5EZMIu4RUj7i2WGo9YOuphMEsEn1TkUwnlWB58hRkjU7F2TWVbk5tXfYxXWtB3OAw4PA1HZH1FSqSvyx75lAiuRgiqY5YOnno4DTmb5eXjeEKb92K84/IYWjGyeQyCWXLKzvUEzft5wsvDywtaSTTnwMYFdJ4gDEO0Uw6W581BMXwVFxF1njw2YVpe0BP8UztX18dvHHHNRKw4+/2cSORBiS9mlhj17Wzk4ZxkF7ECCkDDLOH6JEAXaYM3onENqsvtYRH4VRXnj9/bwk2tCgRNJc8/HxPLFFWaT9bwGd0f5XgUbJYTi78SZqnfmArJ6Gp+OiaS561BpHa4YfmHOsEmohKYh8wUO+Xl0Pxem9QuVfGOlcwSk3baAiuHEyo+DJewZoOq/SjJLI07pgW9fonN2V8QRXXeJn7Dn7Ww/6eqmTaLlsMn7VEDsxSPvqKWYRVN+lrFUVsFrS88zqyg9ceyujpcs+R4xpMUbl0dPr63/q6GoyWo9jx5Zm92bUEkz90xGZJQhVFUxanZkZ7+7co3rXQMV5W1niC2Xlsj6mAA2L79Ac0s8bdvt6iwZqm3CA1rd4NgflNlp0Ii+XuTFCRsQRQTOFc9bIPoJiqUckjnPb5p+4ZHPT2n6iYImFnKDCKRCs/oaRE9OXtEFYHi8Ba2WoImZDmGU+Pi6KDdqL7hFdE0DpfNKA+V4H9Jv/B0PMWKIfywgFlq3pufGFo/1nIcnzgSS9QQqA7YUrVj8K9hW+FmrrFV53bw7s9ejct0vVVdp8MHkgdRLUPJ6Vpd7aLc2uwxenMNT3UGybzOfgf6RlI7aM554zJzAso9kyZWjq5WDON3c5MRLOptjzdkdnXI0FK7I3YHBH3nAiJW1LAOjZd/pv7P/6y7Jw23tcwGmgCL29ND36gG9/RQMkvNZ9e4l8T6LNdesJolbR5Ix74zu9Qw+pIRXWq6VDzQ73yYdkdxk69z9A27IsvrTqHtl8Rq/5VD34mb2KLH/zea+mZHkvN+P9UdSdaC2RKG0R6PqxyqQ8xb3GHliMBXY+mWyS9SPz1fb8ccjBaNORgNH4kj9Scz1BfExDhWRMySWfOq0OtOq93x1YPZJCJgvH1erMhpYaqvpv6FiaCD7vy8/Xe3YLU9YfWSYrU9YTXlJarR/NPwQCzoNPFqDpkp4AM/BbD4YFYjH96VJERbkdOMUibozGQ81dKsigPCIB4/IK83tK7VeQ5de6stiLYiy5MvSgR9rpCZAqPZGnGstghd836H3e2cYpZOPBi/rXHLfzi3/yuAkTwnTKumjxW5vDLehT+1OzxB5/3nO2e/VuEE2uSZfV2LviEmt28goRytognjCDpN1pe8a2gPbfLMvoCIOPBzMGduGR1xV8tJnyX9ZQpesqqgn0wl0DJL/FuD1LcPSa7UIhrWFnfPNYKO/PYfuimVMIj7p+XfbaBRDlYr7y2Iwx9+wQaoBJ0mzmL0RxbzFoqLCnMIbnbTMEuSaw9xw9ois0QKOr+zc/ZHrqLdQ9lhUXRXofqqBMldhZhZKvZZIgQd+fP7P+H/ClAySwHvApEtlMohKoPhMUvwmj0vmg4vH8whKG9Vkp2KUjFLssuWWVchnQg6C5k/z3AxhSkUfZ2FNyQrmCX2JU9bEH2Wjt97QdBZyLzo/Sn/VwCu3DJYhirlkN75zWGWji739bzLXjjLQIwvtHAMbrGnmSX+RXxbUA1rD1fsXtCXuihSCJJZEteANynlkNyetwFxyfZRtPkj6LTlPIz+pv8rYEL5MMFlqT+gmCVhneIV65LtXNB5yHyJLRMzEDf+iK7/3YJillJxLkydWDoQatwOko/FXwyZKQz/+Qj/5IdlrhM8ksGxzM8uHOlANeL2n/d/RTQxDAzfAI9koNxjPNKhz/tDlJGFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFRbX4D1o31VniwMWeAAAAAElFTkSuQmCC'
   eventUrl: 'https://www.wearedevelopers.com/event/vue-js-day-february-2023'
   twitter: '@alvarosabu'
   twitterUrl: 'https://twitter.com/alvarosabu'
@@ -423,10 +423,10 @@ layout: two-cols
 # Slots
 
 ```html
-<TresMesh />
+<TresMesh >
   <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
   <TresMeshBasicMaterial color="orange" />
-<TresMesh />
+</TresMesh>
 ```
 
 ::right::
@@ -450,6 +450,45 @@ scene.add(donut)
 ```
 
 </v-click>
+
+---
+layout: two-cols
+---
+
+# Re-use
+
+```html
+// components/OrangeTorus.vue
+<template>
+  <TresMesh >
+    <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
+    <TresMeshBasicMaterial color="orange" />
+  </TresMesh>
+</template>
+```
+
+::right::
+
+<br />
+<br />
+
+
+<v-click>
+
+```html
+// Parent component
+<template>
+  <TresCanvas>
+    <TresPerspectiveCamera />
+    <TresScene>
+      <OrangeTorus />
+    </TresScene>
+  </TresCanvas>
+</template>
+```
+
+</v-click>
+
 
 ---
 layout: two-cols

@@ -22,3 +22,7 @@ code {
 .slidev-code-wrapper > pre {
   max-width: 400px;
 }
+
+iframe label.btn {
+  display: none;
+}

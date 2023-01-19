@@ -42,11 +42,9 @@ DevRel Engineer at <a href="https://www.storyblok.com/"><logos-storyblok-icon />
 
 ---
 
-<iframe width="860" height="450" style="border-radius: 8px; overflow:hidden;" src="https://tresjsportalthreejsjourney-02rc--5173.local-credentialless.webcontainer.io/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<EmbedExperiment width="860" height="450"  src="https://playground.tresjs.org/vue/portal-journey/"  />
 
-<!-- <Suspense>
-  <TheExperience style="width: 660px; height: auto; aspect-ratio: 16/9; height: auto; margin: 2rem 0; border-radius: 8px; overflow:hidden;"/>
-</Suspense> -->
+
 
 ---
 
@@ -187,7 +185,7 @@ or play with it on [Stackblitz](https://stackblitz.com/edit/tresjs-basic?file=RE
 
 ::right::
 
-<iframe width="400" height="450" style="border-radius: 8px; overflow:hidden;" src="https://playground.tresjs.org/vue/tres-basic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<EmbedExperiment width="400" height="450" src="https://playground.tresjs.org/vue/basic?info=false" />
 
 
 ---
@@ -503,6 +501,242 @@ With this theorically you can create any ThreeJS scene with TresJS and
 
 ::right::
 
-<iframe width="400" height="250" style="border-radius: 8px; overflow:hidden;" src="https://playground.tresjs.org/vue/tres-donut/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<EmbedExperiment width="400" height="250" src="https://playground.tresjs.org/vue/tres-donut/" />
+
+---
+layout: two-cols
+---
+
+# Let's try something more complex
+
+<EmbedExperiment width="400" height="250" src="https://playground.tresjs.org/vue/animations/" />
+
+::right::
+
+<v-click>
+
+```html
+<template>
+  <TresMesh>
+    <TresBoxGeometry :args="[1, 1, 1]" />
+    <TresMeshNormalMaterial />
+  </TresMesh>
+</template>
+```
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# The Loop
+
+![](/render-loop.png)
+
+::right::
+
+```ts
+const loop = () => {
+
+  // Move object
+  cube.position.x += 0.01
+  
+  renderer.render( scene, camera );
+  requestAnimationFrame(loop)
+}
+
+loop()
+```
+
+![](/frames-per-second-diagram.png)
+
+---
+layout: two-cols
+---
+
+# useRenderLoop composable
+
+```ts
+const boxRef: ShallowRef<TresInstance | null> = shallowRef(null);
+
+const { onLoop } = useRenderLoop();
+
+onLoop(({ delta, elapsed }) => {
+  if (boxRef.value) {
+    boxRef.value.rotation.y += delta;
+    boxRef.value.rotation.z = elapsed * 0.2;
+  }
+});
+```
 
 
+::right::
+
+<EmbedExperiment width="400" height="250" src="https://playground.tresjs.org/vue/animations/" />
+
+---
+layout: two-cols
+---
+
+# OrbitControls
+
+`OrbitControls` is a camera controller that allows you to orbit around a target. It's a great way to explore your scene.
+
+However, it is not part of the core of ThreeJS. So to use it you would need to import it from the `three/examples/jsm/controls/OrbitControls` module. 🧐
+
+::right::
+
+<EmbedExperiment width="400" height="250" src="https://playground.tresjs.org/vue/gltf-model/" />
+
+---
+
+![](/wtf.gif)
+
+---
+layout: two-cols
+---
+
+# Way # 1
+
+Fortunately, `TresJS` provides a way to extend the catalog of components. You can do it by using the extend method using the `useCatalogue` composable.
+
+<v-click>
+
+```ts
+import { extend } from 'three'
+
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
+extend({ OrbitControls })
+```
+
+</v-click>
+
+::right::
+
+<v-click>
+
+```html
+<TresScene>
+  <TresOrbitControls 
+    :camera="camera" :renderer="renderer.domElement" 
+  />
+</TresScene>
+```
+
+But wait a minute, where do we get the `camera` or `renderer`?. 🤔
+
+</v-click>
+
+--- 
+layout: two-cols
+---
+
+# useTres composable
+
+With the `useTres` composable you can access the `camera` and `renderer` from any component in your scene ☺️.
+
+```ts
+import { useTres } from '@tresjs/core'
+
+const { camera, renderer } = useTres()
+```
+
+::right::
+<v-click>
+
+```html
+<TresScene>
+  <TresOrbitControls 
+    :camera="camera" :renderer="renderer.domElement" 
+  />
+</TresScene>
+```
+
+</v-click>
+
+---
+
+# Way # 2
+
+<v-click>
+
+ We will need to wait a little bit forward the presentation to see this one. 🤓
+
+
+</v-click>
+
+<v-click>
+
+![](https://media.giphy.com/media/hC4ivYEwCLHCU/giphy.gif)
+
+</v-click>
+
+---
+
+# Materials
+
+<EmbedExperiment class="z-10" width="860" height="350"  src="https://playground.tresjs.org/vue/materials/"  />
+
+---
+layout: two-cols
+---
+
+# Textures
+
+3D textures are images that contain multiple layers of data, allowing them to represent volume or simulate three-dimensional structures.
+
+TresJS provides a way to load textures using the `useTexture` composable.
+
+```ts
+import { useTexture } from '@tresjs/core'
+
+const pbrTexture = await useTexture({
+  map: '/textures/black-rock/Rock035_2K_Displacement.jpg',
+  displacementMap: '/textures/black-rock/Rock035_2K_Displacement.jpg',
+  roughnessMap: '/textures/black-rock/Rock035_2K_Roughness.jpg',
+  normalMap: '/textures/black-rock/Rock035_2K_NormalDX.jpg',
+  ambientOcclusion: '/textures/black-rock/Rock035_2K_AmbientOcclusion.jpg',
+})
+```
+
+::right::
+
+![](/TextureTypes1.png)
+
+---
+layout: two-cols
+---
+
+# Textures
+
+![](/TextureTypes2.png)
+
+::right::
+
+```html
+
+<TresMesh>
+  <TresSphereGeometry :args="[1,32,32]" />
+  <TresMeshStandardMaterial
+    :map="pbrTexture.map"
+    :displacementMap="pbrTexture.displacementMap"
+    :roughnessMap="pbrTexture.roughnessMap"
+    :normalMap="pbrTexture.normalMap"
+    :ambientOcclusionMap="pbrTexture.ambientOcclusionMap"
+  />
+</TresMesh>
+```
+
+<Warning>
+The component using `await useTexture` must be inside a `Suspense` component.
+
+</Warning>
+
+
+---
+
+# Textures
+
+<EmbedExperiment class="z-10" width="860" height="350"  src="https://playground.tresjs.org/vue/materials/"  />

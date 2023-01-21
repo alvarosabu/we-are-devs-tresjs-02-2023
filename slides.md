@@ -739,4 +739,457 @@ The component using `await useTexture` must be inside a `Suspense` component.
 
 # Textures
 
-<EmbedExperiment class="z-10" width="860" height="350"  src="https://playground.tresjs.org/vue/materials/"  />
+<EmbedExperiment class="z-10" width="860" height="350"  src="https://playground.tresjs.org/vue/textures/"  />
+
+---
+layout: two-cols
+---
+
+# Lights 💡 
+
+> The substance of painting is light.
+> -
+> *Andre Derain*, co-founder of Fauvism
+
+::right::
+
+![](/render-v2.png)
+
+- Light is a fundamental part of the 3D scene.
+- Builds a sense of perspective and depth.
+- Creates shadows and reflections.
+- Light is color.
+
+
+--- 
+layout: two-cols
+---
+# Lights 💡 
+![types of light](/types-of-light.png)
+
+::right::
+
+<v-click>
+
+![](https://media.giphy.com/media/xTiN0x8n9m0C7nfYPu/giphy.gif)
+
+</v-click>
+
+--- 
+layout: two-cols
+---
+# Lights 💡
+
+## AmbientLight
+
+```html
+<TresAmbientLight 
+  :args="[0xffffff, 0.5]" 
+/>
+// color, intensity
+```
+
+::right::
+
+## DirectionalLight
+
+```html
+<TresDirectionalLight
+  ref="directionalLightRef
+  :args="[0xffffff, 0.5]" 
+/>
+// Helper
+<TresDirectionalLightHelper
+  v-if="directionalLightRef"
+  :args="[directionalLightRef, 5]"
+/>
+```
+
+---
+
+<EmbedExperiment class="z-10" width="860" height="450"  src="https://playground.tresjs.org/vue/lights/"  />
+
+---
+
+<div class="w-2/3">
+
+![](/no-shadows.png)
+
+</div>
+---
+layout: two-cols
+---
+
+# Shadows 
+
+> Shadow is the means by which bodies display their form.
+> -
+> *Leonardo da Vinci, VueJS Developer*
+
+::right::
+
+![](/leonardo.png)
+
+---
+layout: two-cols
+---
+
+# Enable Shadows
+
+First, we need to tell the `renderer` to enable shadows.
+
+
+```html
+<TresCanvas shadows>
+</TresCanvas>
+```
+
+::right::
+
+<v-click>
+
+Then, we need to tell the `light` to cast shadows.
+
+```html
+<TresDirectionalLight
+  castShadow
+  :args="[0xffffff, 0.5]"
+/>
+```
+
+</v-click>
+
+<v-click>
+
+![](/no-shadows.png)
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# Cast shadows
+
+Now we need to define which objects will cast shadows.
+
+```html
+<TresMesh :position="[2, -2, 0]" cast-shadow>
+  <TresSphereGeometry />
+  <TresMeshToonMaterial color="#FBB03B" />
+</TresMesh>
+```
+
+<v-click>
+
+And which objects will receive shadows.
+
+```html
+<TresMesh receive-shadow>
+  <TresPlaneGeometry :args="[10, 10]" />
+  <TresMeshToonMaterial color="#888" />
+</TresMesh>
+```
+
+</v-click>
+
+::right::
+
+<v-click>
+
+![](/cast-shadow.png)
+
+</v-click>
+
+---
+
+<EmbedExperiment class="z-10" width="860" height="450"  src="https://playground.tresjs.org/vue/shadows/"  />
+
+---
+layout: two-cols
+---
+
+# Environment Tweaks
+
+```html
+<TresCanvas
+  alpha
+  shadows
+  clear-color="#82DBC5"
+  physically-correct-lights
+  shadow-map-type="PCFSoftShadowMap"
+  output-encoding="sRGBEncoding"
+  tone-mapping="ReinhardToneMapping"
+>
+</TresCanvas>
+```
+
+---
+
+
+<EmbedExperiment class="z-10" width="800" height="450"  src="https://playground.tresjs.org/vue/enviroment/"  />
+
+---
+layout: two-cols
+---
+
+# Events
+
+**TresJS** Mesh objects emit pointer events when they are interacted with using `raycaster` and `pointer` objects under the hood.
+
+```html
+<TresMesh
+  @click="(ev) => console.log('click', ev)"
+  @pointer-move="(ev) => console.log('click', ev)"
+  @pointer-enter="(ev) => console.log('click', ev)"
+  @pointer-leave="(ev) => console.log('click', ev)"
+/>
+```
+
+::right::
+
+<EmbedExperiment class="z-10" width="400" height="250"  src="https://playground.tresjs.org/vue/events/"  />
+
+---
+layout: two-cols
+---
+
+# Models
+
+**TresJS** supports loading models from `.gltf`, `.glb` and `.fbx` files (More formats planned).
+
+There are **3** ways to load models:
+
+- Using the `useLoader` composable.
+- Using the `useGLTF` composable from `cientos`
+- Using the `GLTFModel` component from `cientos`
+
+::right::
+
+<EmbedExperiment class="z-10" width="400" height="250"  src="https://playground.tresjs.org/vue/gltf-model/"  />
+
+---
+
+# Wait, what is cientos?
+
+<div class="w-2/3">
+
+![](https://media.giphy.com/media/ji6zzUZwNIuLS/giphy.gif)
+
+</div>
+
+---
+layout: text-image
+media: /cientos.png
+---
+
+# Cientos package
+
+Cientos (Spanish word for "hundreds", pronounced `/θjentos/` ) is a collection of useful ready-to-go abstractions and components that are not part of the core package
+
+```bash
+npm install @tresjs/cientos -D
+```
+
+--- 
+
+# You got it? Tres-cientos --> Three hundred
+
+![](https://media.giphy.com/media/UWERvU4Nzn1ExkPKTx/giphy.gif)
+
+---
+layout: two-cols
+---
+
+# Cientos package
+
+![cientos](/cientos.png)
+
+::right::
+
+```
+@trejs/cientos/
+├── Abstractions/
+│   ├── Text3D
+│   └── useAnimations
+├── Controls/
+│   ├── OrbitControls
+│   └── TransformControls
+├── Loaders/
+│   ├── useLTF
+│   ├── GLTFModel
+│   ├── useFBX
+│   └── FBXModel
+├── Shapes/
+│   └── Plane
+└── Misc/
+    └── useTweakPane
+```
+---
+
+
+# Way # 2
+
+We will need to wait a little bit forward the presentation to see this one. 🤓
+
+![](https://media.giphy.com/media/hC4ivYEwCLHCU/giphy.gif)
+
+---
+layout: two-cols
+---
+# Way # 2
+
+```vue
+<script setup>
+import { OrbitControls } from '@tresjs/cientos'
+</script>
+
+<template>
+  <TresCanvas>
+    <OrbitControls />
+  </TresCanvas>
+</template>
+```
+
+::right::
+
+<v-click>
+
+![](https://media.giphy.com/media/glvyCVWYJ21fq/giphy-downsized-large.gif)
+
+</v-click>
+
+--- 
+layout: two-cols
+---
+# Another Example
+
+Using only `@tresjs/core`
+
+```html
+<TresMesh :rotation="[-Math.PI / 2, 0, 0]">
+  <TresPlaneGeometry :args="[10,10]" />
+  <TresMeshToonMaterial color="#FBB03B" />
+</TresMesh>
+```
+
+::right::
+
+<v-click>
+
+Using `@tresjs/cientos`
+
+```html
+<Plane :args="[10,10]">
+  <TresMeshToonMaterial color="#FBB03B" />
+</Plane>
+```
+
+</v-click>
+
+<v-click>
+
+![](pacha.jpeg)
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# useLoader
+
+The `useLoader` composable allows you to pass any type of Three.js loader and a URL to load the resource from
+
+```ts
+import { useLoader } from '@tresjs/core'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+
+const { scene } = 
+  await useLoader(GLTFLoader, '/models/AkuAku.gltf')
+```
+
+::right::
+
+<v-click>
+
+```html
+<template>
+  <TresCanvas>
+    <TresScene>
+      <TresMesh v-bind="scene" />
+    </TresScene>
+  </TresCanvas>
+</template>
+```
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# useGLTF
+
+The `useGLTF` composable is a wrapper around `useLoader` that allows you to load `.gltf` and `.glb` files
+
+```ts
+import { useGLTF } from '@tresjs/cientos'
+
+const { scene } = 
+  await useGLTF('/models/AkuAku.gltf', { draco: true})
+```
+
+::right::
+
+<v-click>
+
+```html
+<template>
+  <TresCanvas>
+    <TresScene>
+      <TresMesh v-bind="scene" />
+    </TresScene>
+  </TresCanvas>
+</template>
+```
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# GLTFModel
+
+The `GLTFModel` component is a wrapper around `useGLTF`
+
+```html
+<GLTFModel ref="modelRef" src="/models/AkuAku.gltf" draco />
+```
+
+::right::
+
+<v-click>
+
+You can get the reference to the model using a [Template Ref](https://v3.vuejs.org/guide/component-template-refs.html)
+
+```ts
+<script setup lang="ts">
+import { OrbitControls, GLTFModel } from '@tresjs/cientos'
+
+const modelRef = shallowRef<THREE.Object3D>()
+
+watch(modelRef, ({getModel}) => {
+  const model = getModel()
+  model.traverse((child) => {
+    if (child.isMesh) {
+      child.castShadow = true
+      child.receiveShadow = true
+    }
+  })
+})
+</script>
+```
+
+</v-click>

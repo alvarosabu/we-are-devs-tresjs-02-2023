@@ -1131,7 +1131,7 @@ layout: two-cols
 
 # useGLTF
 
-The `useGLTF` composable is a wrapper around `useLoader` that allows you to load `.gltf` and `.glb` files
+The `useGLTF` composable is a wrapper around `useLoader` available on `cientos` 📦 that allows you to load `.gltf` and `.glb` files.
 
 ```ts
 import { useGLTF } from '@tresjs/cientos'
@@ -1162,7 +1162,7 @@ layout: two-cols
 
 # GLTFModel
 
-The `GLTFModel` component is a wrapper around `useGLTF`
+The `GLTFModel` component is a wrapper around `useGLTF` from `cientos` 📦
 
 ```html
 <GLTFModel ref="modelRef" src="/models/AkuAku.gltf" draco />
@@ -1193,3 +1193,78 @@ watch(modelRef, ({getModel}) => {
 ```
 
 </v-click>
+
+---
+layout: two-cols
+---
+# useTweakPane
+
+
+The `useTweakPane` composable allows you to create a [Tweakpane](https://cocopon.github.io/tweakpane/) instance and add parameters to it.
+
+```ts
+import { useTweakPane } from '@tresjs/cientos'
+
+const { pane } = useTweakPane()
+
+pane.addInput(state, 'clearColor', {
+  label: 'Background Color',
+  colorMode: 'hex',
+})
+
+pane.addInput(state, 'shadows', {
+  label: 'Shadows',
+})
+pane.addInput(state, 'physicallyCorrectLights', {
+  label: 'physicallyCorrectLights',
+})
+```
+
+::right::
+
+![](/public/tweakpane.png)
+
+---
+
+# TresJS EcoSystem 🌳
+
+<div class="w-2/3">
+
+![](/tresjs-ecosystem.png)
+
+</div>
+
+---
+layout: two-cols
+---
+
+# Caveats 😬
+
+- **HMR**, TresJS uses [Vite](https://vitejs.dev/) under the hood, but we are struggling to correctly dispose scenes and objects with HMR. We are working on it.
+- **TresJS is a wrapper around Three.js**, so you need to be mindfull about **reactivity**. For example, if you want to change the position of a mesh, you need to use a `ref` and update the value of the `position` property instead via `props`
+
+::right::
+
+```ts
+const boxRef = shallowRef(null);
+
+const { onLoop } = useRenderLoop();
+
+onLoop(({ delta, elapsed }) => {
+  if (boxRef.value) {
+    boxRef.value.rotation.y += delta;
+    boxRef.value.rotation.z = elapsed * 0.2;
+  }
+});
+```
+
+---
+
+# Roadmap
+
+![Roadmap](/roadmap-2023.png)
+---
+
+## Contributors
+
+<TheContributors />

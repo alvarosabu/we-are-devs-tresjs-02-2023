@@ -21,6 +21,11 @@ const contributors = [
     github: 'https://github.com/JaimeTorrealba',
   },
   {
+    name: 'Adrien Stanusic',
+    avatar: 'https://avatars.githubusercontent.com/u/52937036?v=4',
+    github: 'https://github.com/Astanusic',
+  },
+  {
     name: 'AlvaroSabu',
     avatar: 'https://avatars.githubusercontent.com/u/4699008?v=4',
     github: 'https://github.com/alvarosabu',
@@ -33,7 +38,7 @@ const contributors = [
 ]
 </script>
 <template>
-  <div class="pt-8 grid grid-cols-3 gap-8">
+  <div class="pt-8 grid grid-cols-4 gap-8">
     <div class="flex flex-col items-center" v-for="{ avatar, name } of contributors">
       <img :src="avatar" class="rounded-full w-20 h-20 mb-2 object-cover border border-gray-200" />
       <h2 class="important-text-sm">{{ name }}</h2>

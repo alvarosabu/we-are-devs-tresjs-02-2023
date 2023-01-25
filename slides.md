@@ -31,14 +31,18 @@ presenterImage: https://res.cloudinary.com/alvarosaburido/image/upload/v16731937
 
 # Alvaro Saburido
 
-DevRel Engineer at <a href="https://www.storyblok.com/"><logos-storyblok-icon /> Storyblok</a>
+<a href="https://www.storyblok.com/"><logos-storyblok-icon /> Storyblok</a> Ambassador
+
+<v-clicks>
 
 - Barcelona, Spain 🇻🇪 🇪🇸
 - I often write at <a href="https://dev.to/alvarosaburido"> dev.to/@alvarosabu</a>
 - Creating content on <a href="https://www.youtube.com/channel/AlvaroDevLabs" ><logos-youtube-icon mr-1 />AlvaroDevLabs</a>
 - Blog & Portfolio <a href="https://alvarosaburido.dev">alvarosaburido.dev</a>
 - Say hi at <a href="https://twitter.com/alvarosabu"><logos-twitter mr-1 />@alvarosabu</a>
-- <a href="https://elk.zone/mas.to/@alvarosabu">@alvarosabu@mas.to</a>
+- Mastodon <a href="https://elk.zone/mas.to/@alvarosabu">@alvarosabu@mas.to</a>
+  
+</v-clicks>
 
 ---
 
@@ -154,8 +158,6 @@ Intelligent enough to generate Vue components based on the ThreeJS constructors 
 
 Special mention to [0xca0a](https://twitter.com/0xca0a) to spark the idea on a conversation we had on Twitter.
 
-
-
 That's TresJS.
 
 ---
@@ -165,12 +167,15 @@ media: https://media.giphy.com/media/GgcusW5RLS9Nu/giphy.gif
 
 # The Challenge
 
+<v-clicks>
 
 - Up to date with ThreeJS with low maintenance 😃
 - No custom renderer 🧐
 - Performant even with reactivity ⚡️
 - Verbose and easy to use 🤓
+- 3D Ecosystem for vue community 🤝
 
+</v-clicks>
 ---
 layout: two-cols
 ---
@@ -182,6 +187,8 @@ pnpm add @tresjs/core three -D
 ```
 
 or play with it on [Stackblitz](https://stackblitz.com/edit/tresjs-basic?file=README.md)
+
+TresJS is powered by <a href="https://vitejs.dev/"><i class="icon-logos-vitejs" /> ViteJS </a>
 
 ::right::
 
@@ -242,11 +249,14 @@ layout: two-cols
 
 Every 3D experience needs at least the following components:
 
+<v-clicks>
+
 - Objects
 - A **Camera** to see the objects
 - An **Scene** to put all together
 - A **Renderer** to render it to the canvas (DOM)
 
+</v-clicks>
 ---
 layout: two-cols
 ---
@@ -1016,7 +1026,7 @@ layout: two-cols
 │   ├── OrbitControls
 │   └── TransformControls
 ├── Loaders/
-│   ├── useLTF
+│   ├── useGLTF
 │   ├── GLTFModel
 │   ├── useFBX
 │   └── FBXModel
@@ -1264,7 +1274,57 @@ onLoop(({ delta, elapsed }) => {
 
 ![Roadmap](/roadmap-2023.png)
 ---
+layout: text-image
+media: /playground.png
+---
+# Resources
+
+- [TresJS Documentation](https://tresjs.org)
+- [TresJS Playground](https://playground.tresjs.org/)
+- [StackBlitz Collection](https://stackblitz.com/@alvarosabu/collections/tresjs)
+- Soon content on my [YouTube Channel](https://www.youtube.com/channel/UC6D2KveNVcuuPqOKp0YWO3w)
+
+--- 
 
 ## Contributors
 
 <TheContributors />
+
+---
+layout: two-cols
+---
+
+
+### Contributing
+
+- Send me a DM on Twitter [@alvarosabu](https://twitter.com/alvarosabu) to add you to the repo while is private. ✌️ 
+
+### Sharing is caring 🙏
+
+- Share this project with your friends and colleagues. 🙏
+- On Twitter and Mastodon, use the tags [#Do3DwithVue](https://twitter.com/hashtag/Do3DwithVue) [#TresJS](https://twitter.com/hashtag/TresJS)
+
+::right:: 
+
+### Sponsoring
+
+<ul>
+  <li class="flex items-center mb-3">
+    <img src="https://avatars.githubusercontent.com/u/4699008?v=4" class="rounded-full w-10 h-10 mr-4 object-cover border border-gray-200" /> <iframe src="https://github.com/sponsors/alvarosabu/button" title="Sponsor alvarosabu" height="35" width="116" style="border: 0;"></iframe> 
+  </li>
+  <li class="flex items-center">
+    <img src="https://avatars.githubusercontent.com/u/5133074?v=4" class="rounded-full w-10 h-10 mr-4 object-cover border border-gray-200" /> <iframe src="https://github.com/sponsors/kissu/button" title="Sponsor kissu" height="35" width="116" style="border: 0;"></iframe> 
+  </li>
+  <li class="flex items-center">
+    <img src="https://avatars.githubusercontent.com/u/7064956?v=4" class="rounded-full w-10 h-10 mr-4 object-cover border border-gray-200" /> You should have a GH sponsor button here! 🤔
+  </li>
+</ul>
+
+---
+layout: new-section
+---
+
+# Thank you 🙏
+
+![](https://media.giphy.com/media/28HuTvEHje7v1ngGAm/giphy.gif)
+---

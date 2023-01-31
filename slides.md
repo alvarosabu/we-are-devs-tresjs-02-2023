@@ -20,32 +20,12 @@ drawings:
 
 # TresJS ▲ ■ ●
 
-## A declarative way of using ThreeJS as Vue components
+## A declarative way of doing 3D with Vue components
+
 
 ---
-layout: presenter
-twitter: '@alvarosabu'
-twitterUrl: https://twitter.com/alvarosabu
-presenterImage: https://res.cloudinary.com/alvarosaburido/image/upload/v1673193768/the-astronaut-color_el2jle.png
+preload: false
 ---
-
-# Alvaro Saburido
-
-<a href="https://www.storyblok.com/"><logos-storyblok-icon /> Storyblok</a> Ambassador
-
-<v-clicks>
-
-- Barcelona, Spain 🇻🇪 🇪🇸
-- I often write at <a href="https://dev.to/alvarosaburido"> dev.to/@alvarosabu</a>
-- Creating content on <a href="https://www.youtube.com/channel/AlvaroDevLabs" ><logos-youtube-icon mr-1 />AlvaroDevLabs</a>
-- Blog & Portfolio <a href="https://alvarosaburido.dev">alvarosaburido.dev</a>
-- Say hi at <a href="https://twitter.com/alvarosabu"><logos-twitter mr-1 />@alvarosabu</a>
-- Mastodon <a href="https://elk.zone/mas.to/@alvarosabu">@alvarosabu@mas.to</a>
-  
-</v-clicks>
-
----
-
 <EmbedExperiment width="860" height="450"  src="https://playground.tresjs.org/vue/portal-journey/"  />
 
 
@@ -79,6 +59,7 @@ import TheFireFlies from './TheFireFlies.vue'
 
 ---
 layout: two-cols
+preload: false
 ---
 
 # TresJS
@@ -305,6 +286,12 @@ renderer.render(scene, camera)
 ```
 
 ---
+layout: text-image
+media: /mesh.png
+
+
+
+---
 
 # Adding an Object
 
@@ -332,7 +319,7 @@ With TresJS:
 <TresCanvas>
   <TresPerspectiveCamera />
   <TresScene>
-    <TresMesh />
+    <TresMesh >
       <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
       <TresMeshBasicMaterial color="orange" />
     <TresMesh />
@@ -466,7 +453,7 @@ layout: two-cols
 # Re-use
 
 ```html
-// components/OrangeTorus.vue
+// components/OrangeDonut.vue
 <template>
   <TresMesh >
     <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
@@ -489,7 +476,7 @@ layout: two-cols
   <TresCanvas>
     <TresPerspectiveCamera />
     <TresScene>
-      <OrangeTorus />
+      <OrangeDonut />
     </TresScene>
   </TresCanvas>
 </template>
@@ -614,7 +601,7 @@ Fortunately, `TresJS` provides a way to extend the catalog of components. You ca
 <v-click>
 
 ```ts
-import { extend } from 'three'
+import { extend } from '@tresjs/core'
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -750,6 +737,13 @@ The component using `await useTexture` must be inside a `Suspense` component.
 # Textures
 
 <EmbedExperiment class="z-10" width="860" height="350"  src="https://playground.tresjs.org/vue/textures/"  />
+
+--- 
+preload:false
+
+---
+
+<EmbedExperiment class="z-10" width="860" height="450"  src="https://playground.tresjs.org/vue/tlou-ellie-thriller/"  />
 
 ---
 layout: two-cols
@@ -1319,6 +1313,29 @@ layout: two-cols
     <img src="https://avatars.githubusercontent.com/u/7064956?v=4" class="rounded-full w-10 h-10 mr-4 object-cover border border-gray-200" /> You should have a GH sponsor button here! 🤔
   </li>
 </ul>
+
+---
+layout: presenter
+twitter: '@alvarosabu'
+twitterUrl: https://twitter.com/alvarosabu
+presenterImage: https://res.cloudinary.com/alvarosaburido/image/upload/v1673193768/the-astronaut-color_el2jle.png
+---
+
+# Alvaro Saburido
+
+<a href="https://www.storyblok.com/"><logos-storyblok-icon /> Storyblok</a> Ambassador
+
+<v-clicks>
+
+- Barcelona, Spain 🇻🇪 🇪🇸
+- I often write at <a href="https://dev.to/alvarosaburido"> dev.to/@alvarosabu</a>
+- Creating content on <a href="https://www.youtube.com/channel/AlvaroDevLabs" ><logos-youtube-icon mr-1 />AlvaroDevLabs</a>
+- Blog & Portfolio <a href="https://alvarosaburido.dev">alvarosaburido.dev</a>
+- Say hi at <a href="https://twitter.com/alvarosabu"><logos-twitter mr-1 />@alvarosabu</a>
+- Mastodon <a href="https://elk.zone/mas.to/@alvarosabu">@alvarosabu@mas.to</a>
+  
+</v-clicks>
+
 
 ---
 layout: new-section
